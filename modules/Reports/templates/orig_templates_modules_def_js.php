@@ -1,6 +1,6 @@
 <?php
 if(!defined('sugarEntry') || !sugarEntry) die('Not A Valid Entry Point');
-//KUSKE - Report - grouped nach Stunde
+
 /*
  * Your installation or use of this SugarCRM file is subject to the applicable
  * terms available at
@@ -384,15 +384,12 @@ module_defs['<?php echo $module_name; ?>'].label = "<?php echo addslashes(
 	$min = translate('LBL_MIN');
 	$day = translate('LBL_DAY');
 	$week = translate('LBL_WEEK');
-//KUSKE
-    $hour = "Stunde";	
 	$month = translate('LBL_MONTH');
 	$year = translate('LBL_YEAR');
     $quarter = translate('LBL_QUARTER');
 ?>
 var summary_types = {sum:'<?php echo $sum; ?>',avg:'<?php echo $avg; ?>',max:'<?php echo $max; ?>',min:'<?php echo $min; ?>'};
     var date_summary_types = {
-        hour:'<?php echo $hour; ?>',
         day:'<?php echo $day; ?>',
         week:'<?php echo $week; ?>',
         month:'<?php echo $month; ?>',
@@ -656,7 +653,6 @@ qualifiers[qualifiers.length] = {name:'not_empty',value:'<?php echo $mod_strings
 filter_defs['bool'] = qualifiers;
 
 var date_group_defs =  new Array();
-date_group_defs[date_group_defs.length] = {name:'hour', value:'<?php echo $mod_strings['STUNDE']; ?>'};
 date_group_defs[date_group_defs.length] = {name:'day', value:'<?php echo $mod_strings['LBL_BY_DAY']; ?>'};
 date_group_defs[date_group_defs.length] = {name:'week', value:'<?php echo $mod_strings['LBL_BY_WEEK']; ?>'};
 date_group_defs[date_group_defs.length] = {name:'month', value:'<?php echo $mod_strings['LBL_BY_MONTH']; ?>'};

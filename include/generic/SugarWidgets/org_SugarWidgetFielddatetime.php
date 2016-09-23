@@ -1,6 +1,5 @@
 <?php
 if(!defined('sugarEntry') || !sugarEntry) die('Not A Valid Entry Point');
-//KUSKE - Report - grouped nach Stunde
 /*
  * Your installation or use of this SugarCRM file is subject to the applicable
  * terms available at
@@ -1060,23 +1059,6 @@ class SugarWidgetFieldDateTime extends SugarWidgetReportField
             'CONCAT',
             array("'-'", $dateWeek)
         ) . ' ' . $this->_get_column_alias($layout_def);
-    }
-
-//KUSKE - Report - grouped nach Stunde
-    public function querySelecthour($layout_def)
-    {
-        $column = $this->_get_column_select($layout_def);
-
-        $dateYear = $this->reporter->db->convert($column, 'date_format', array('%Y-%m-%d'));
-        $dateWeek = $this->reporter->db->convert($column, 'date_format', array('%H:00:00'));
-
-        // Format the value we're grouping on as YYYY-WW
-        return $this->reporter->db->convert(
-            $dateYear,
-            'CONCAT',
-            array("' '", $dateWeek)
-        ) . ' ' . $this->_get_column_alias($layout_def);
-
     }
 
     /**
